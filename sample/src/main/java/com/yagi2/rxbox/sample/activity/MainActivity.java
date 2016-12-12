@@ -41,7 +41,7 @@ public class MainActivity extends BaseActivity {
                     .flatMap(new Func1<Void, Observable<FullAccount>>() {
                         @Override
                         public Observable<FullAccount> call(Void aVoid) {
-                            return RxBox.getCurrentAccount(ClientFactory.getClient())
+                            return RxBox.Users.getCurrentAccount(ClientFactory.getClient())
                                     .subscribeOn(Schedulers.io());
                         }
                     })

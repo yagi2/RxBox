@@ -69,7 +69,7 @@ public class FileBrowseActivity extends BaseActivity {
                 .flatMap(new Func1<Void, Observable<ListFolderResult>>() {
                     @Override
                     public Observable<ListFolderResult> call(Void aVoid) {
-                        return RxBox.getFilesList(ClientFactory.getClient(), lowerPath)
+                        return RxBox.Files.getFilesList(ClientFactory.getClient(), lowerPath)
                                 .subscribeOn(Schedulers.io());
                     }
                 })
