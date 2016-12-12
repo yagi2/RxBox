@@ -1,6 +1,6 @@
 # RxBox
 v0.0.1[WIP]  
-This library makes dropbox-java-sdk easy to use with RxJava.  
+This library makes [dropbox-java-sdk=(https://github.com/dropbox/dropbox-sdk-java) easy to use with RxJava.  
 
 ## How to use
 
