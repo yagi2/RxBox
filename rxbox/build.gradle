@@ -1,5 +1,7 @@
+def repo = new File(rootDir, "repository")
+
 apply plugin: 'java'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'maven'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -11,11 +13,13 @@ dependencies {
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 
-publish {
-    userOrg = 'yagi2'
-    groupId = 'com.yagi2'
-    artifactId = 'rxbox'
-    publishVersion = "0.0.1"
-    desc = 'Use dropbox-sdk-java more easily. Wrapping RxJava.'
-    website = 'https://github.com/yagi2/RxBox'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: "file://${repo.absolutePath}"
+            pom.version = '0.0.1'
+            pom.groupId = 'com.yagi2'    // グループ名
+            pom.artifactId = 'rxbox'
+        }
+    }
 }
