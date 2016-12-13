@@ -2,19 +2,46 @@
 v0.0.1[WIP]  
 This library makes [dropbox-java-sdk](https://github.com/dropbox/dropbox-sdk-java) easy to use with RxJava.  
 
-## How to use
-
-1. Clone this reposiroty.  
-2. Run gradlew task.  
-
-```
-$ ./gradlew jar
-```
-
-3. Please import `rxbox/build/libs/rxbox.jar` into your project.
+## Including In Project For Gradle
   
-Please wait until I register with jcenter.  
-I will do it as soon as possible, sorry.
+repository:    
+  
+```gradle
+repositories {
+    maven { url 'http://yagi2.github.io/RxBox/' }
+}
+```
+
+dependency:    
+  
+``` gradle
+dependencies {
+    compile 'com.yagi2:rxbox:0.0.1'
+}
+```
+
+## Including In Project For Maven (unconfirmed)  
+  
+repository:
+
+```xml
+<repositories>
+    <repository>
+        <id>yagi2-rxbox-repo</id>
+        <url>http://yagi2.github.io/RxBox/</url>
+    </repository>
+</repositories>
+```
+
+dependency:
+
+```xml
+<dependency>
+    <groupId>com.yagi2</groupId>
+    <artifactId>rxbox</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
 
 ## Example
 if you want get [FullAccount](https://dropbox.github.io/dropbox-sdk-java/api-docs/v2.1.x/com/dropbox/core/v2/users/FullAccount.html).
@@ -68,7 +95,6 @@ $ ./gradlew clean assembleDebug
 
 ## TODO
 
-* add jCenter throw bintray.
 * implementation more method.
 * separate API_KEY from `String.xml`.
 * create Javadoc.
