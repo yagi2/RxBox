@@ -1,5 +1,5 @@
 # RxBox
-v0.0.1[WIP]  
+v0.0.2[WIP]  
 This library makes [dropbox-java-sdk](https://github.com/dropbox/dropbox-sdk-java) easy to use with RxJava.  
 
 ## Including In Project For Gradle
