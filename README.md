@@ -97,5 +97,5 @@ $ ./gradlew clean assembleDebug
 
 * implementation more method.
 * separate API_KEY from `String.xml`.
-* create Javadoc.
+* create document.
 * add tests.
