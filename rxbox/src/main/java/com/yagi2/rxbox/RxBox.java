@@ -4,6 +4,7 @@ import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.GetTemporaryLinkResult;
 import com.dropbox.core.v2.files.ListFolderResult;
+import com.dropbox.core.v2.files.Metadata;
 import com.dropbox.core.v2.users.FullAccount;
 
 import rx.Observable;
@@ -49,6 +50,19 @@ public class RxBox {
                 public Observable<GetTemporaryLinkResult> call() {
                     try {
                         return just(dbxClientV2.files().getTemporaryLink(path));
+                    } catch (DbxException e) {
+                        return error(e);
+                    }
+                }
+            });
+        }
+
+        public static Observable<Metadata> getMetadata(final DbxClientV2 dbxClientV2, final String path) {
+            return defer(new Func0<Observable<Metadata>>() {
+                @Override
+                public Observable<Metadata> call() {
+                    try {
+                        return just(dbxClientV2.files().getMetadata(path));
                     } catch (DbxException e) {
                         return error(e);
                     }
